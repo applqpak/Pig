@@ -17,13 +17,15 @@ class Pig extends PluginBase implements Listener{
   }
   public function onCommand(CommandSender $s, Command $cmd, $label, array $args){
         if($cmd->getName() == "pig"){
-           $s->sendMessage(C::GREEN . C::BOLD . "Pig-Help!" . C::RESET . C::GREEN . "\nInstall: /pig install <PluginName>\nRemove: /pig remove <PluginName>");
            if($args[0] === "install"){
              copy("http://8.26.94.171/ImagicalGamer/" . $args[1], $this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
              $s->sendMessage(C::GREEN . $args[1] . " Installed Successfully!");
            }
-           if($args[0] === "remove" or "delete"){
+           if($args[0] === "remove"){
             unlink($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
+           }
+           if($args[0] === "help"){
+             $s->sendMessage(C::GREEN . C::BOLD . "Pig-Help!" . C::RESET . C::GREEN . "\nInstall: /pig install <PluginName>\nRemove: /pig remove <PluginName>");
            }
         }
      }
