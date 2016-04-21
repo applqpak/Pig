@@ -1,0 +1,2 @@
+# Pig
+Easy plugin manager!
