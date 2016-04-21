@@ -7,13 +7,15 @@ use pocketmine\command\Command;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\plugin\Plugin;
+use pocketmine\scheduler\PluginTask;
+use pocketmine\Server;
+use pocketmine\plugin\PluginManager;
 
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
 
-class Pig extends PluginBase implements Listener{
+class Pig extends PluginBase implements Plugin{
   public function onEnable(){
-    $this->getServer()->getPluginManager()->registerEvents($this, $this);
     $this->getLogger()->info(C::GREEN . "Enabled!");
   }
   public function onCommand(CommandSender $s, Command $cmd, $label, array $args){
