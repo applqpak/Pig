@@ -28,7 +28,8 @@ class Pig extends PluginBase {
            if($args[0] === "remove"){
             $plugin = ($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
              if(file_exists($plugin)){
-               //$this->getServer()->getPluginManager()->disablePlugin($plugin);
+               $pluginname = $this->getServer()->getPluginManager()->getPlugin($args[1]);
+               $this->getServer()->getPluginManager()->disablePlugin($pluginname);
                unlink($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
                $s->sendMessage(C::GREEN . $args[1] . " Removed Successfully!");
              }
