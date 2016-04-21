@@ -6,6 +6,7 @@ use pocketmine\command\Command;
 
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
+use pocketmine\plugin\Plugin;
 
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
