@@ -22,7 +22,14 @@ class Pig extends PluginBase implements Listener{
              $s->sendMessage(C::GREEN . $args[1] . " Installed Successfully!");
            }
            if($args[0] === "remove"){
-            unlink($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
+             $plugin = ($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
+             if(file_exists($plugin)){
+               unlink($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
+               $s->sendMessage(C::GREEN . $plugin . " Removed Successfully!");
+             }
+             else{
+               $s->sendMessage(C::RED . $args[1] . " Does not exist!");
+             }
            }
            if($args[0] === "help"){
              $s->sendMessage(C::GREEN . C::BOLD . "Pig-Help!" . C::RESET . C::GREEN . "\nInstall: /pig install <PluginName>\nRemove: /pig remove <PluginName>");
