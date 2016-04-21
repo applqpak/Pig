@@ -25,7 +25,7 @@ class Pig extends PluginBase implements Listener{
              $plugin = ($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
              if(file_exists($plugin)){
                unlink($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
-               $s->sendMessage(C::GREEN . $plugin . " Removed Successfully!");
+               $s->sendMessage(C::GREEN . $args[1] . " Removed Successfully!");
              }
              else{
                $s->sendMessage(C::RED . $args[1] . " Does not exist!");
