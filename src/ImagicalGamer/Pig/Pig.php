@@ -17,7 +17,7 @@ class Pig extends PluginBase implements Listener{
   }
   public function onCommand(CommandSender $s, Command $cmd, $label, array $args){
         if($cmd->getName() == "pig"){
-           $s->sendMessage(C::GREEN . C::BOLD . "Pig-Help!" . C::RESET . C::GREEN . "\nInstall: /pig install <PluginName>\nRemove: /pig remove <PluginName>")
+           $s->sendMessage(C::GREEN . C::BOLD . "Pig-Help!" . C::RESET . C::GREEN . "\nInstall: /pig install <PluginName>\nRemove: /pig remove <PluginName>");
            if($args[0] === "install"){
              copy("http://8.26.94.171/ImagicalGamer/" . $args[1], $this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
              $s->sendMessage(C::GREEN . $args[1] . " Installed Successfully!");
