@@ -4,17 +4,15 @@ namespace ImagicalGamer\Pig;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 
-use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
-use pocketmine\plugin\Plugin;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Server;
-use pocketmine\plugin\PluginManager;
 
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
 
-class Pig extends PluginBase implements Plugin{
+class Pig extends PluginBase {
+  
   public function onEnable(){
     $this->getLogger()->info(C::GREEN . "Enabled!");
   }
