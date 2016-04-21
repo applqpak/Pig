@@ -20,6 +20,9 @@ class Pig extends PluginBase implements Listener{
            if($args[0] === "install"){
              copy("http://8.26.94.171/ImagicalGamer/" . $args[1], $this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
              $s->sendMessage(C::GREEN . $args[1] . " Installed Successfully!");
+             $path = $this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar";
+             $plugin = $this->getServer()->getPluginManager()->loadPlugin($path);
+             $this->getServer()->getPluginManager()->enablePlugin($plugin);
            }
            if($args[0] === "remove"){
              $plugin = ($this->getServer()->getDataPath() . "plugins/" . $args[1] . ".phar");
