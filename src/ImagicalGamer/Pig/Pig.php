@@ -5,13 +5,14 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 
 use pocketmine\plugin\PluginBase;
+use pocketmine\plugin\Plugin;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Server;
 
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
 
-class Pig extends PluginBase {
+class Pig extends PluginBase implements Plugin {
   
   public function onEnable(){
     $this->getLogger()->info(C::GREEN . "Enabled!");
